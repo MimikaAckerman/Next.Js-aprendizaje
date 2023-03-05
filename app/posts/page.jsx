@@ -1,23 +1,13 @@
-const fetchPosts = () =>{
-    return fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-}
+import ListOfPosts from "./ListOfPosts";
 
 
-export default async function PostsPage ({params}){
-    const posts = await fetchPosts()
+export default  function PostsPage (){
+   
     
     
     return (
         <section>
-            {posts.map(post =>(
-                <article key={post.id}>
-                    <h2>{post.title}</h2>
-                    <p>{post.body}</p>
-
-
-                </article>
-            ))}
+         <ListOfPosts/>
         </section>
     )
 }
